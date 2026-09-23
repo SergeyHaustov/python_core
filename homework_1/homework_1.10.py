@@ -5,12 +5,7 @@
 
 digits = [1, 5, 2, 9, 2, 9, 1]
 n = len(digits)
-i = 0
 
 for i in range(n):
-    if digits[i] in digits[0:i] or digits[i] in digits[i+1:]:
-        continue
-    else:
+    if digits[i] not in digits[0:i] and digits[i] not in digits[i+1:]:
         print(digits[i])
-
-

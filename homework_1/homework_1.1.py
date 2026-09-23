@@ -3,7 +3,7 @@
 variable_1 = -1.6
 variable_2 = 2.99
 
-variable_1= round(abs(variable_1))
-variable_2= round(variable_2)
+variable_1 = int(variable_1)
+variable_2 = int(variable_2)
 
 print(variable_1, variable_2)
