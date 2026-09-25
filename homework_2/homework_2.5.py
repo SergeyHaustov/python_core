@@ -17,3 +17,5 @@ print(f"PASS tests: {tests_pass} \nFAIL tests: {tests_fail} \nSKIP tests: {tests
 
 if tests_fail > 0:
     print("There are FAIL tests.")
+else:
+    print("All tests are successful!")
