@@ -1,0 +1,41 @@
+[
+    {
+      "login": "TestUser1",
+      "Password": "Test123456",
+      "AuthorizationResult": "PASS"
+    },
+    {
+      "login": "TestUser2",
+      "Password": "Test1234567",
+      "AuthorizationResult": "PASS"
+    },
+  {
+      "login": "TestUser3",
+      "Password": "Test12345678",
+      "AuthorizationResult": "FAIL"
+    },
+  {
+      "login": "TestUser4",
+      "Password": "Test12345689",
+      "AuthorizationResult": null
+    },
+  {
+      "login": "TestUser5",
+      "Password": "Test123456898",
+      "AuthorizationResult": "PASS"
+    },
+  {
+      "login": "TestUser6",
+      "Password": "Test1234568987"
+    },
+  {
+      "login": "TestUser7",
+      "Password": "Test12345689876",
+      "AuthorizationResult": ""
+    },
+  {
+      "login": "TestUser8",
+      "Password": "45464565!4",
+      "AuthorizationResult": "dfgdf"
+    }
+]
