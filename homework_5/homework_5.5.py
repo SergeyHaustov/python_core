@@ -6,6 +6,17 @@ tests_status = []
 tests_time = []
 max_time = 0
 
+def validate_required_fields(data):
+    required_fields = {"Name", "Status", "Execution_time"}
+
+    for index, test in enumerate(data):
+        missing_fields = required_fields - test.keys()
+
+        if missing_fields:
+            raise ValueError(
+                f"В элементе с индексом {index} отсутствуют обязательные поля: "
+                f"{', '.join(sorted(missing_fields))}"
+            )
 
 def count_of_test_result(list_name, status):
     return sum(test["Status"] == status for test in list_name)
@@ -19,16 +30,15 @@ except FileNotFoundError:
 except json.JSONDecodeError as e:
     print(f"Невозможно прочитать файл как JSON: {e}")
 else:
-    for n in range(len(data)):
-        if data[n].get("Name") is None:
-            data[n]["Name"] = "Undefined"
-        if data[n].get("Status") is None:
-            data[n]["Status"] = "Undefined"
-        if data[n].get("Execution_time") is None:
-            data[n]["Execution_time"] = 0
-        if data[n]["Execution_time"] > max_time:
-            max_time = data[n]["Execution_time"]
-            longest_test = [data[n]["Name"], data[n]["Execution_time"]]
+    try:
+        validate_required_fields(data)
+    except TypeError as e:
+        print(f"Некорректная структура тестовых данных: {e}")
+    else:
+        for n in range(len(data)):
+            if data[n]["Execution_time"] > max_time:
+                max_time = data[n]["Execution_time"]
+                longest_test = [data[n]["Name"], data[n]["Execution_time"]]
 
     failed_tests = filter(lambda test: test["Status"] == "FAIL", data)
     name_failed_test = [test["Name"] for test in failed_tests]
