@@ -1,0 +1,31 @@
+[
+  {
+    "Name": "Authorization",
+    "Status": "PASS",
+    "Execution_time": 30
+  },
+  {
+    "Name": "Select item",
+    "Status": "PASS",
+    "Execution_time": 90
+  },
+  {
+    "Name": "Payment",
+    "Status": "SKIP"
+  },
+  {
+    "Name": "Turned on dark theme",
+    "Status": "FAIL",
+    "Execution_time": 43
+  },
+  {
+    "Name": "Check sum",
+    "Status": "PASS",
+    "Execution_time": 125
+  },
+  {
+    "Name": "Logout",
+    "Status": "FAIL",
+    "Execution_time": 44
+  }
+]
