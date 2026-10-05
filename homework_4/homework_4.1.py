@@ -4,7 +4,7 @@ with open("homework_4.1.1.txt","r") as file:
 
 length = len(digits)
 
-if length <= 3:
+if length < 3:
     print("Error!")
 else:
     print(digits[0])
